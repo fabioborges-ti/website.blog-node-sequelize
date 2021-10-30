@@ -51,6 +51,11 @@ $ npx sequelize db:seed:all
 ```
 Se tudo correu bem, seu banco de dados foi criado e agora já tem dados criados de forma automática; e já pode começar seus estudos. Sugiro que não deixe de abrir o site oficial do Sequelize e conhecer uma série de recursos disponíveis, como criação de novos ***Models***, novos relacionamentos e novas migrações. 
 
+Para testar o blog, use o comando abaixo e bons estudos
+```bash
+$ npm start 
+```
+
 ## 📚 Para mais informações:
 Se você não conhece muito sobre este processo e quer mais detalhes, consulte em: https://sequelize.org/
 
