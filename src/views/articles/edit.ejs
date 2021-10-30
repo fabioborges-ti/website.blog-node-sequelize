@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include('../partials/header') %>
+<body>
+  <div class="container-fluid">
+    <%- include('../partials/navbar') %>
+    <div class="card">
+      <div class="card-header">
+        <h4>Editar artigo</h4>
+      </div>
+      <div class="card-body">
+        <form method="post" action="./save">
+          <div class="form-group">
+            <label for="categoryId">Categoria</label>
+            <select name="categoryId" id="categoryId" class="form-control">
+              <% categories.forEach(category => { %>
+                <%  if (category.id === article.categoryId) { %>
+                  <option value="<%= category.id %>" selected><%= category.title %></option>
+                <%  } else { %>
+                <option value="<%= category.id %>"><%= category.title %></option>
+                <%  } %>
+              <% }) %>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="title">Título</label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="Informe o título do artigo" value="<%= article.title %>" />
+          </div>
+          <div class="form-group">
+            <label for="content">Texto</label>
+            <textarea id="content" name="content" rows="5" class="form-control" placeholder="Escreva uma breve descrição"><%= article.body %></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <input type="hidden" id="articleId" name="articleId" value="<%= article.id %>" />
+        </form>
+      </div>
+    </div>
+    <%- include('../partials/footer') %>
+  </div>
+</body>
+<%- include('../partials/scripts') %>
+</html>

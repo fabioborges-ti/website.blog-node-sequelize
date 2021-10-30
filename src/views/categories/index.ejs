@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include('../partials/header') %>
+<body>
+  <div class="container-fluid">
+    <%- include('../partials/navbar') %>
+    <h4>Categorias</h4>
+    <p>
+      <a class="btn btn-primary btn-sm" href="../categories/create">Nova</a>
+    </p>
+    <table class="table table-bordered">
+      <thead">
+        <tr>
+          <th>#</th>
+          <th>Título</th>
+          <th>Slug</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% categories.forEach(category => { %>
+          <tr>
+            <th><%= category.id %></th>
+            <th><%= category.title %></th>
+            <th><%= category.slug %></th>
+            <th>
+              <a href="../categories/edit/<%= category.id %>"><i class="fas fa-pencil-alt"></i></a>
+              <a href="#" onclick="ConfirmDelete('../categories/remove/<%= category.id %>');"><i class="far fa-trash-alt"></i></a>
+            </th>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <%- include('../partials/footer') %>
+  </div>
+</body>
+<%- include('../partials/scripts') %>
+</html>

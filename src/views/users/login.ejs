@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include('../partials/header') %>
+<body>
+  <div class="container-fluid">
+    <%- include('../partials/navbar') %>
+    <div class="card">
+      <div class="card-header">
+        <h4>Autenticação</h4>
+      </div>
+      <div class="card-body">
+        <form method="post" action="./login/auth">
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" class="form-control" placeholder="Informe o e-mail do usuário" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Informe sua password" />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    <%- include('../partials/footer') %>
+  </div>
+</body>
+<%- include('../partials/scripts') %>
+</html>

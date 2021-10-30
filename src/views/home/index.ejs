@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include('../partials/header') %>
+<body>
+  <div class="container-fluid">
+    <%- include('../partials/navbar') %>
+    <%- include('../partials/jumbotron') %>
+    <div class="row">
+      <div class="col-4">
+        <%- include('../partials/menubar') %>
+      </div>
+      <div class="col-8">
+        <%  articles.forEach(article => { %>
+          <div class="card">
+            <div class="card-header">
+              <%= article.title %>
+            </div>
+            <div class="card-body">
+              <a href="../articles/<%= article.slug %>" class="btn btn-primary btn-sm">Ler artigo</a>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+    <%- include('../partials/footer') %>
+  </div>
+</body>
+<%- include('../partials/scripts') %>
+</html>

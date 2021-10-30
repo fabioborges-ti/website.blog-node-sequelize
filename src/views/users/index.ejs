@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include('../partials/header') %>
+<body>
+  <div class="container-fluid">
+    <%- include('../partials/navbar') %>
+    <h4>Usuários</h4>
+    <p>
+      <a class="btn btn-primary btn-sm" href="../users/create">Novo</a>
+    </p>
+    <table class="table table-bordered">
+      <thead">
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(user => { %>
+          <tr>
+            <th><%= user.id %></th>
+            <th><%= user.name %></th>
+            <th><%= user.email %></th>
+            <th>
+              <a href="../users/edit/<%= user.id %>"><i class="fas fa-pencil-alt"></i></a>
+              <a href="#" onclick="ConfirmDelete('../users/remove/<%= user.id %>');"><i class="far fa-trash-alt"></i></a>
+            </th>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+    <%- include('../partials/footer') %>
+  </div>
+</body>
+<%- include('../partials/scripts') %>
+</html>

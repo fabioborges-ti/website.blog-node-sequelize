@@ -1,0 +1,13 @@
+html,
+body {
+  background-color: #fff;
+}
+
+.navbar,
+.card {
+  margin-bottom: 10pt;
+}
+
+footer {
+  margin-top: 20px;
+}
